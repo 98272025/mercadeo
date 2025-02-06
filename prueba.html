@@ -67,21 +67,38 @@
 
     <!-- Contador de visitas -->
     <div class="counter">
-        <?php
-            $archivo = "contador.txt";
-            if (!file_exists($archivo)) {
-                file_put_contents($archivo, "0");
-            }
-            $contador = (int) file_get_contents($archivo);
-            $contador++;
-            file_put_contents($archivo, $contador);
-            echo "Número de visitas: " . $contador;
-        ?>
+        Número de visitas al repositorio: <span id="visit-counter">Cargando...</span>
     </div>
 
     <footer>
         <p>Universidad Santiago de Cali</p>
         <p>Carrera 62 # 5-00, Cali - Colombia</p>
     </footer>
+
+    <script>
+        // Nombre de usuario y repositorio de GitHub
+        const githubUser = "TU_USUARIO_GITHUB"; // Cambia esto con tu usuario de GitHub
+        const repoName = "TU_REPOSITORIO"; // Cambia esto con el nombre del repositorio
+
+        // URL de la API de GitHub para obtener las estadísticas del repositorio
+        const apiUrl = `https://api.github.com/repos/${githubUser}/${repoName}`;
+
+        // Realizar la solicitud a la API
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                // Extraer el número de visitas (stargazers_count es el número de estrellas)
+                if (data.watchers_count !== undefined) {
+                    document.getElementById("visit-counter").textContent = data.watchers_count;
+                } else {
+                    document.getElementById("visit-counter").textContent = "Error al obtener visitas";
+                }
+            })
+            .catch(error => {
+                console.error("Error al obtener datos de GitHub:", error);
+                document.getElementById("visit-counter").textContent = "No disponible";
+            });
+    </script>
 </body>
 </html>
+
