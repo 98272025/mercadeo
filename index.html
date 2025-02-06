@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Programa de Ingeniería de Energías - Universidad Santiago de Cali">
-    <title>Ingeniería de Energías - USC</title>
+    <title>Ingeniería de Energías Sostenibles - USC</title>
     <style>
         :root {
             --usc-green: #005C29;
@@ -48,16 +48,27 @@
         }
 
         .video-container {
-            width: 100%;
-            border-radius: 10px;
+            position: relative;
             overflow: hidden;
+            border-radius: 15px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.2);
         }
 
-        video {
+        .video-16-9 {
+            padding-bottom: 56.25%;
+        }
+
+        .video-9-16 {
+            padding-bottom: 177.78%;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: auto;
-            display: block;
+            height: 100%;
+            border: 0;
         }
 
         .features {
@@ -103,14 +114,6 @@
             color: white !important;
         }
 
-        .price-box {
-            background: #E8F5E9;
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin: 1rem 0;
-            text-align: center;
-        }
-
         footer {
             background: var(--usc-green);
             color: white;
@@ -119,12 +122,13 @@
         }
 
         @media (max-width: 768px) {
-            .features {
-                padding: 2rem 1rem;
+            .video-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
             }
             
-            .hero h1 {
-                font-size: 2rem;
+            .features {
+                padding: 2rem 1rem;
             }
         }
     </style>
@@ -137,67 +141,66 @@
     </header>
 
     <section class="hero">
-        <h1>Ingeniería de Energías</h1>
-        <p>Lidera la transición energética sostenible</p>
+        <h1>Ingeniería de Energías Renovables</h1>
+        <p>Transformando el futuro energético con tecnología inteligente</p>
     </section>
 
     <div class="video-grid">
-        <div class="video-container">
-            <video controls>
-                <source src="video1.mp4" type="video/mp4">
-                Tu navegador no soporta el elemento de video
-            </video>
+        <div class="video-container video-16-9">
+            <iframe src="https://www.youtube.com/embed/zXyJ2Awj004?autoplay=1&mute=1&playsinline=1&rel=0&loop=1&playlist=zXyJ2Awj004" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>
         </div>
         
-        <div class="video-container">
-            <video controls>
-                <source src="video2.mp4" type="video/mp4">
-                Tu navegador no soporta el elemento de video
-            </video>
+        <div class="video-container video-9-16">
+            <iframe src="https://www.youtube.com/embed/g0zuQQYfdoI?autoplay=1&mute=1&playsinline=1&rel=0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>
         </div>
     </div>
 
     <div class="features">
         <div class="feature-card">
-            <h2>📚 Plan de Estudios</h2>
-            <p>Duración: 10 semestres</p>
-            <div class="price-box">
-                <strong>Inversión semestral:</strong><br>
-                $4.639.608 COP
-            </div>
-            <a href="https://www.usc.edu.co/ingenieria-de-sistemas/" 
-               class="btn btn-primary" target="_blank">
-                Ver programa completo
-            </a>
+            <h2>🌞 Energías Limpias</h2>
+            <ul>
+                <li>Sistemas solares fotovoltaicos</li>
+                <li>Parques eólicos terrestres</li>
+                <li>Biomasa sostenible</li>
+                <li>Sistemas Grid Inteligentes</li>
+                <li>Microcentrales hidroeléctricas</li>
+            </ul>
         </div>
 
         <div class="feature-card">
-            <h2>🔬 Laboratorio SEI</h2>
-            <p>Infraestructura de última generación para:</p>
+            <h2>🔋 Laboratorio SEI</h2>
+            <p>Tecnología de punta para:</p>
             <ul>
-                <li>Energías renovables</li>
-                <li>Sistemas inteligentes</li>
-                <li>Investigación aplicada</li>
+                <li>Diseño de sistemas Grid Inteligentes</li>
+                <li>Almacenamiento energético avanzado</li>
+                <li>Simulación de redes inteligentes</li>
             </ul>
             <a href="https://www.usc.edu.co/la-usc-inaugura-el-laboratorio-de-soluciones-de-energia-inteligente-sei-un-espacio-pionero-en-innovacion-y-sostenibilidad-energetica/" 
                class="btn btn-primary" target="_blank">
-                Conocer laboratorio
+                Ver instalaciones
             </a>
         </div>
 
         <div class="feature-card">
-            <h2>🚀 Campo Laboral</h2>
-            <ul>
-                <li>Diseño de sistemas energéticos</li>
-                <li>Auditorías energéticas</li>
-                <li>Consultoría en sostenibilidad</li>
-                <li>Investigación aplicada</li>
-            </ul>
+            <h2>📘 Plan de Estudios</h2>
+            <p>Duración: 10 semestres</p>
+            <div style="background: #E8F5E9; padding: 1rem; border-radius: 10px; margin: 1rem 0;">
+                <strong>Inversión semestral:</strong><br>
+                $4.639.608 COP
+            </div>
+            <a href="https://www.usc.edu.co/ingenieria-en-energias/" 
+               class="btn btn-primary" target="_blank">
+                Ver malla curricular
+            </a>
         </div>
     </div>
 
     <section class="cta-section">
-        <h2>¡Transforma el futuro energético con nosotros!</h2>
+        <h2>¡Conviértete en experto en sistemas energéticos inteligentes!</h2>
         <a href="https://sinu.usc.edu.co:8443/sinugwt/inscripciones.jsp#home" 
            class="btn btn-primary" target="_blank">
             🎓 Inscríbete ahora
