@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Programa de Ingeniería de Energías - Universidad Santiago de Cali">
+    <title>Ingeniería de Energías - USC</title>
+    <style>
+        :root {
+            --usc-green: #005C29;
+            --usc-gold: #FFD700;
+            --text-dark: #333;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        .header {
+            background: var(--usc-green);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .logo {
+            width: 220px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .hero {
+            padding: 4rem 1rem;
+            background: linear-gradient(rgba(0,92,41,0.9), rgba(0,92,41,0.8));
+            color: white;
+            text-align: center;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .video-container {
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 4rem 1rem;
+            background: var(--usc-gold);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 1rem;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--usc-green);
+            color: white !important;
+        }
+
+        .price-box {
+            background: #E8F5E9;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        footer {
+            background: var(--usc-green);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .features {
+                padding: 2rem 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="https://www.usc.edu.co/wp-content/uploads/2023/05/logo-USC.png.webp" 
+             alt="Universidad Santiago de Cali" 
+             class="logo">
+    </header>
+
+    <section class="hero">
+        <h1>Ingeniería de Energías</h1>
+        <p>Lidera la transición energética sostenible</p>
+    </section>
+
+    <div class="video-grid">
+        <div class="video-container">
+            <video controls>
+                <source src="video1.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video
+            </video>
+        </div>
+        
+        <div class="video-container">
+            <video controls>
+                <source src="video2.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video
+            </video>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature-card">
+            <h2>📚 Plan de Estudios</h2>
+            <p>Duración: 10 semestres</p>
+            <div class="price-box">
+                <strong>Inversión semestral:</strong><br>
+                $4.639.608 COP
+            </div>
+            <a href="https://www.usc.edu.co/ingenieria-de-sistemas/" 
+               class="btn btn-primary" target="_blank">
+                Ver programa completo
+            </a>
+        </div>
+
+        <div class="feature-card">
+            <h2>🔬 Laboratorio SEI</h2>
+            <p>Infraestructura de última generación para:</p>
+            <ul>
+                <li>Energías renovables</li>
+                <li>Sistemas inteligentes</li>
+                <li>Investigación aplicada</li>
+            </ul>
+            <a href="https://www.usc.edu.co/la-usc-inaugura-el-laboratorio-de-soluciones-de-energia-inteligente-sei-un-espacio-pionero-en-innovacion-y-sostenibilidad-energetica/" 
+               class="btn btn-primary" target="_blank">
+                Conocer laboratorio
+            </a>
+        </div>
+
+        <div class="feature-card">
+            <h2>🚀 Campo Laboral</h2>
+            <ul>
+                <li>Diseño de sistemas energéticos</li>
+                <li>Auditorías energéticas</li>
+                <li>Consultoría en sostenibilidad</li>
+                <li>Investigación aplicada</li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="cta-section">
+        <h2>¡Transforma el futuro energético con nosotros!</h2>
+        <a href="https://sinu.usc.edu.co:8443/sinugwt/inscripciones.jsp#home" 
+           class="btn btn-primary" target="_blank">
+            🎓 Inscríbete ahora
+        </a>
+        <p>📞 Contacto directo: 317 400 4097</p>
+    </section>
+
+    <footer>
+        <p>Universidad Santiago de Cali</p>
+        <p>Carrera 62 # 5-00, Cali - Colombia</p>
+    </footer>
+</body>
+</html>
